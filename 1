@@ -1,0 +1,27 @@
+#coding: utf-8
+"""To assured users could run this program as many times as they want use while loop to maintain the endless enter 
+and use 'break' to stop the program. """
+
+while True:
+    s = input ("Please enter 3 integers to combine a triangle(enter q to quit):")     #remind users to enter three sides of the triangle
+    S = s.split (',')                                                                 #split three number with','
+    if s == 'q':                                                                      # enter'q' to quit the program
+        print ('Already tried?')
+        break
+    else :
+        a = int (S[0])                                                                #use a,b,c to represent three sides
+        b = int (S[1])
+        c = int( S[2])
+        if a + b > c and a + c > b and b + c > a :                                    #check if a,b,c could form a triangle
+            if a == b and b == c :
+                print ("It's a equilateral triangle.")
+            else :
+                if a == b or b == c or a == c:
+                    print ("It's an isosceles triangle.")
+                else :
+                    if a*a +b*b == c*c:
+                       print ("It's a right triangle.")        
+                    else :
+                       print ("It's a normal triangle.")
+        else :
+            print ('Sorry, the 3 numbers cannot combine a triangle.')
